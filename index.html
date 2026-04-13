@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Animações CSS e JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #2b2b3d;
+            padding: 30px;
+            width: 450px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #00ffff;
+        }
+
+        .pergunta {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 3px solid #00ffff;
+            background-color: #242436;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #00ffff;
+            color: #1e1e2f;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #00b3b3;
+        }
+
+        #resultado {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #00ffff;
+        }
+
+        .correto {
+            color: #00ff7f;
+            font-weight: bold;
+        }
+
+        .errado {
+            color: #ff4040;
+            font-weight: bold;
+        }
+
+        .neutro {
+            color: #ffd166;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quiz 2 - Animações CSS e JavaScript</h1>
+
+        <form id="quizForm">
+            <div class="pergunta" id="q1box">
+                <p>1) O que a propriedade <code>animation</code> faz no CSS?</p>
+                <label><input type="radio" name="q1" value="a"> Apaga o elemento da tela</label><br>
+                <label><input type="radio" name="q1" value="b"> Cria e controla uma animação</label><br>
+                <label><input type="radio" name="q1" value="c"> Muda apenas a cor do texto</label><br>
+                <label><input type="radio" name="q1" value="d"> Centraliza o elemento</label>
+            </div>
+
+            <div class="pergunta" id="q2box">
+                <p>2) Para que serve o <code>@keyframes</code>?</p>
+                <label><input type="radio" name="q2" value="a"> Para criar variáveis CSS</label><br>
+                <label><input type="radio" name="q2" value="b"> Para definir as etapas da animação</label><br>
+                <label><input type="radio" name="q2" value="c"> Para esconder um elemento</label><br>
+                <label><input type="radio" name="q2" value="d"> Para fazer o JavaScript rodar</label>
+            </div>
+
+            <div class="pergunta" id="q3box">
+                <p>3) No código <code>transform: translateY(-20px)</code>, o que acontece com o elemento?</p>
+                <label><input type="radio" name="q3" value="a"> Ele gira 20 graus</label><br>
+                <label><input type="radio" name="q3" value="b"> Ele desce 20px</label><br>
+                <label><input type="radio" name="q3" value="c"> Ele sobe 20px</label><br>
+                <label><input type="radio" name="q3" value="d"> Ele aumenta de tamanho</label>
+            </div>
+
+            <div class="pergunta" id="q4box">
+                <p>4) O que faz <code>transform: scale(1.1)</code>?</p>
+                <label><input type="radio" name="q4" value="a"> Faz o elemento crescer um pouco</label><br>
+                <label><input type="radio" name="q4" value="b"> Faz o elemento girar</label><br>
+                <label><input type="radio" name="q4" value="c"> Faz o elemento tremer</label><br>
+                <label><input type="radio" name="q4" value="d"> Faz o elemento desaparecer</label>
+            </div>
+
+            <div class="pergunta" id="q5box">
+                <p>5) No JavaScript, qual é a função de <code>classList.add()</code>?</p>
+                <label><input type="radio" name="q5" value="a"> Remover um elemento</label><br>
+                <label><input type="radio" name="q5" value="b"> Adicionar uma classe ao elemento</label><br>
+                <label><input type="radio" name="q5" value="c"> Criar uma variável</label><br>
+                <label><input type="radio" name="q5" value="d"> Trocar o id do elemento</label>
+            </div>
+
+            <div class="pergunta" id="q6box">
+                <p>6) No código <code>setTimeout(() => {...}, 3000)</code>, o número 3000 significa:</p>
+                <label><input type="radio" name="q6" value="a"> 3000 minutos</label><br>
+                <label><input type="radio" name="q6" value="b"> 3000 horas</label><br>
+                <label><input type="radio" name="q6" value="c"> 3000 milissegundos, ou 3 segundos</label><br>
+                <label><input type="radio" name="q6" value="d"> 3000 frames</label>
+            </div>
+
+            <div class="pergunta" id="q7box">
+                <p>7) Se o ícone já tiver a classe <code>bounce-animation</code> no HTML, o que pode acontecer?</p>
+                <label><input type="radio" name="q7" value="a"> A animação pode começar sozinha</label><br>
+                <label><input type="radio" name="q7" value="b"> O JavaScript para de funcionar</label><br>
+                <label><input type="radio" name="q7" value="c"> O card some da tela</label><br>
+                <label><input type="radio" name="q7" value="d"> Nada acontece</label>
+            </div>
+
+            <div class="pergunta" id="q8box">
+                <p>8) Para que serve <code>addEventListener('click', ...)</code>?</p>
+                <label><input type="radio" name="q8" value="a"> Para ouvir o clique do usuário e executar uma
+                    ação</label><br>
+                <label><input type="radio" name="q8" value="b"> Para mudar a cor do fundo automaticamente</label><br>
+                <label><input type="radio" name="q8" value="c"> Para apagar o card</label><br>
+                <label><input type="radio" name="q8" value="d"> Para aumentar o tamanho da tela</label>
+            </div>
+
+            <button type="button" onclick="corrigir()">Enviar Respostas</button>
+        </form>
+
+        <p id="resultado"></p>
+        <p id="linkRespostas"></p>
+    </div>
+
+   <script>
+  function corrigir() {
+    const respostasCorretas = {
+      q1: "b",
+      q2: "b",
+      q3: "c",
+      q4: "a",
+      q5: "b",
+      q6: "c",
+      q7: "a",
+      q8: "a"
+    };
+
+    let pontos = 0;
+    const total = Object.keys(respostasCorretas).length;
+    const form = document.getElementById("quizForm");
+
+    // cria a lista que vai guardar as respostas para montar o link
+    let params = [];
+
+    for (const q in respostasCorretas) {
+      const box = document.getElementById(q + "box");
+
+      const antigo = box.querySelector(".feedback");
+      if (antigo) antigo.remove();
+
+      const marcado = form.querySelector(`input[name="${q}"]:checked`);
+      const respostaAluno = marcado ? marcado.value : "nao_respondeu";
+
+      // guarda a resposta no link
+      params.push(`${q}=${respostaAluno}`);
+
+      const feedback = document.createElement("p");
+      feedback.classList.add("feedback");
+
+      if (respostaAluno === "nao_respondeu") {
+        feedback.textContent = "⚠️ Você não marcou nenhuma alternativa.";
+        feedback.classList.add("neutro");
+      } else if (respostaAluno === respostasCorretas[q]) {
+        pontos++;
+        feedback.textContent = "✅ Correto!";
+        feedback.classList.add("correto");
+      } else {
+        let respostaCorretaTexto = "";
+        const inputs = box.querySelectorAll("label input");
+
+        inputs.forEach(input => {
+          if (input.value === respostasCorretas[q]) {
+            respostaCorretaTexto = input.parentNode.textContent.trim();
+          }
+        });
+
+        feedback.textContent = `❌ Errado. A resposta correta é: ${respostaCorretaTexto}`;
+        feedback.classList.add("errado");
+      }
+
+      box.appendChild(feedback);
+    }
+
+    document.getElementById("resultado").textContent =
+      `Você acertou ${pontos} de ${total} questões.`;
+
+    // adiciona pontuação no link
+    params.push(`pontos=${pontos}`);
+    params.push(`total=${total}`);
+
+    // monta o link final
+    const urlBase = window.location.origin + window.location.pathname;
+    const link = urlBase + "?" + params.join("&");
+
+    // mostra o link na tela
+    document.getElementById("linkRespostas").innerHTML =
+      `🔗 Link com respostas e status:<br><a href="${link}" target="_blank">${link}</a>`;
+  }
+</script>
+</body>
+
+</html>
